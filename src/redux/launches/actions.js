@@ -5,7 +5,12 @@
  */
 
 import moment from "moment";
-import { SET_LAUNCH_DATA, SET_LAUNCH_FETCH_STATUS } from "./types";
+import {
+  SET_LAUNCH_DATA,
+  SET_LAUNCH_FETCH_STATUS
+} from "./types";
+
+const FAKE_API_DELAY = 1000;
 
 let data = [
   {
@@ -109,7 +114,7 @@ let data = [
 export const applyFilter = (key) => async (dispatch) => {
   try {
     dispatch({ type: SET_LAUNCH_FETCH_STATUS, payload: true });
-    await new Promise((resolve) => setTimeout(resolve, 3000));
+    await new Promise((resolve) => setTimeout(resolve, FAKE_API_DELAY));
     dispatch({ type: SET_LAUNCH_FETCH_STATUS, payload: false });
 
     let filteredData;
@@ -142,7 +147,7 @@ export const applyFilter = (key) => async (dispatch) => {
 export const applyDateFilter = (key) => async (dispatch) => {
   try {
     dispatch({ type: SET_LAUNCH_FETCH_STATUS, payload: true });
-    await new Promise((resolve) => setTimeout(resolve, 3000));
+    await new Promise((resolve) => setTimeout(resolve, FAKE_API_DELAY));
     dispatch({ type: SET_LAUNCH_FETCH_STATUS, payload: false });
 
     let filteredData;

@@ -5,11 +5,11 @@
  */
 import React, { useState, useEffect } from "react";
 import { useSelector, useDispatch } from 'react-redux';
-import { Table, ConfigProvider } from "antd";
-import { Label } from "../styles/tensor";
-import LaunchDetails from "./LaunchDetails";
-import { applyFilter } from "../redux/launches/actions";
 import moment from "moment";
+import { Table, ConfigProvider } from "antd";
+import LaunchDetails from "./LaunchDetails";
+import { Label } from "../styles/tensor";
+import { applyFilter } from "../redux/launches/actions";
 
 
 const columns = [
@@ -71,12 +71,11 @@ function LaunchData() {
         loading={{ spinning: isLoading, size: 'large' }}
         style={{ width: "1200px" }}
         rowKey={(record) => record.no}
-        onRow={(record, rowIndex) => {
+        onRow={(record) => {
           return {
-            onClick: (event) => handleRowClick(record),
+            onClick: () => handleRowClick(record),
           };
         }}
-        
       />
       <LaunchDetails
         modalOpen={modal}

@@ -1,8 +1,14 @@
-import "antd/dist/reset.css";
+/*
+ * Author: Mohammed Musthafa
+ * Created Date: Friday November 25th 2022
+ * Product : TensorIoT
+ */
+
 import NavBar from "./components/NavBar";
 import LaunchData from "./components/LaunchData";
 import { CenteredFlex } from "./styles/tensor";
 import Filters from "./components/Filters";
+import "antd/dist/reset.css";
 
 function App() {
   return (
@@ -11,7 +17,6 @@ function App() {
 			<Filters />
 			<CenteredFlex mx={50}>
 			<LaunchData />
-
 			</CenteredFlex>
 		</div>
   );

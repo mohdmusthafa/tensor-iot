@@ -42,3 +42,7 @@ export const DataLabel = styled.h2`
   font-size: 14px;
   color: darkgray;
 `;
+export const Image = styled.img`
+  width: 100%;
+  height: 100%;
+`

@@ -4,12 +4,13 @@
  * Product : TensorIoT
  */
 
-import { YoutubeOutlined } from "@ant-design/icons";
-import { Modal, Typography } from "antd";
-import crsLogo from "../assets/crs1.png";
-import { DataLabel, Label, Title } from "../styles/tensor";
 import styled from "styled-components";
+import { Modal, Typography } from "antd";
+import { YoutubeOutlined } from "@ant-design/icons";
 import { SiNasa,SiWikipedia } from 'react-icons/si'
+import { DataLabel, Label, Title, Image } from "../styles/tensor";
+import crsLogo from "../assets/crs1.png";
+
 const { Text, Link } = Typography;
 
 const LinkContainer = styled.div`
@@ -17,13 +18,13 @@ const LinkContainer = styled.div`
   justify-content: space-between;
   align-items: center;
 `;
-
 const DetailDataContainer = styled.div`
   margin-top: 10px;
 `;
 const DetailDataItem = styled(LinkContainer)`
   margin: 0;
 `;
+
 
 const RenderLabel = ({ launch_status }) => {
   if (launch_status === "Failed")
@@ -37,12 +38,10 @@ function LaunchDetails({ modalOpen = false, onCancel, missionData }) {
   return (
     <>
       <Modal open={modalOpen} onCancel={onCancel} footer={null} centered>
-        {/* HEADER START */}
         <div style={{ display: "flex", width: "max-content" }}>
           <div style={{ width: 70, height: 70, marginRight: 10 }}>
-            <img
+            <Image
               src={crsLogo}
-              style={{ width: "100%", height: "100%" }}
               alt="Mission Logo"
             />
           </div>
@@ -59,7 +58,6 @@ function LaunchDetails({ modalOpen = false, onCancel, missionData }) {
             <RenderLabel launch_status={missionData.launch_status || ""} />
           </div>
         </div>
-        {/* HEADER ENDS */}
         <div style={{ marginTop: 15 }}>
           <Text>
             {missionData?.description?.text || ""}

@@ -4,14 +4,14 @@
  * Product : TensorIoT
  */
 import { useState } from "react";
+import { useDispatch } from "react-redux";
+import styled from "styled-components";
+import { Button, Dropdown, Space } from "antd";
 import {
   CalendarOutlined,
   FilterOutlined,
   DownOutlined,
 } from "@ant-design/icons";
-import { Button, Dropdown, Space } from "antd";
-import { useDispatch } from "react-redux";
-import styled from "styled-components";
 import { applyDateFilter, applyFilter } from "../redux/launches/actions";
 
 const FilterContainer = styled.div`
@@ -20,43 +20,21 @@ const FilterContainer = styled.div`
   justify-content: space-between;
   align-items: center;
 `;
-
 const FlexibleSpace = styled(Space)`
   font-size: ${(props) => props.size + "px" || 1 + "em"};
 `;
 
 const launchFilterItems = [
-  {
-    label: "All Launches",
-    key: "1",
-  },
-  {
-    label: "Upcoming Launches",
-    key: "2",
-  },
-  {
-    label: "Successful Launches",
-    key: "3",
-  },
-  {
-    label: "Failed Launches",
-    key: "4",
-  },
+  { label: "All Launches", key: "1" },
+  { label: "Upcoming Launches", key: "2" },
+  { label: "Successful Launches", key: "3" },
+  { label: "Failed Launches", key: "4" },
 ];
 
 const dateFilterItems = [
-  {
-    label: "Past 1 Month",
-    key: "1",
-  },
-  {
-    label: "Past 6 Month",
-    key: "2",
-  },
-  {
-    label: "Past 1 Year",
-    key: "3",
-  },
+  { label: "Past 1 Month", key: "1" },
+  { label: "Past 6 Month", key: "2" },
+  { label: "Past 1 Year", key: "3" },
 ];
 
 function Filters() {

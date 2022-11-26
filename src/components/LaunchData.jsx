@@ -1,11 +1,11 @@
 /*
  * Author: Mohammed Musthafa
  * Created Date: Saturday November 26th 2022
- * Product : GLU
+ * Product : TensorIoT
  */
 import React, { useState, useEffect } from "react";
 import { useSelector, useDispatch } from 'react-redux';
-import { Space, Table, Tag, ConfigProvider, Button } from "antd";
+import { Table, ConfigProvider } from "antd";
 import { Label } from "../styles/tensor";
 import LaunchDetails from "./LaunchDetails";
 import { applyFilter } from "../redux/launches/actions";
@@ -46,9 +46,11 @@ function LaunchData() {
   const [modalData, setModalData] = useState({});
   const data = useSelector(state => state.launches.launches);
   const isLoading = useSelector(state => state.launches.launchesFetching);
+  
   useEffect(() => {
     dispatch(applyFilter('1'));
-  }, [])
+    // eslint-disable-next-line
+  }, []);
 
   const handleModalClose = () => {
     setModal(false);

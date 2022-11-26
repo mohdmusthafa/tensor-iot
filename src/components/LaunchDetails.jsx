@@ -4,8 +4,8 @@
  * Product : TensorIoT
  */
 
-import { CalendarOutlined, YoutubeOutlined } from "@ant-design/icons";
-import { Modal, Space, Typography } from "antd";
+import { YoutubeOutlined } from "@ant-design/icons";
+import { Modal, Typography } from "antd";
 import crsLogo from "../assets/crs1.png";
 import { DataLabel, Label, Title } from "../styles/tensor";
 import styled from "styled-components";

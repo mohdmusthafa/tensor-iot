@@ -118,7 +118,7 @@ export const applyFilter = (key) => async (dispatch) => {
         filteredData = data;
         break;
       case "2":
-        filteredData = data.filter((item) => item.launch_status == "Upcoming");
+        filteredData = data.filter((item) => item.launch_status === "Upcoming");
         break;
       case "3":
         filteredData = data.filter((item) => item.launch_status === "Success");

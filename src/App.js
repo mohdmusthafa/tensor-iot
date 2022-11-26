@@ -1,24 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
+import "antd/dist/reset.css";
+import { Layout, Button } from "antd";
+import NavBar from "./components/NavBar";
+import LaunchData from "./components/LaunchData";
+import { CenteredFlex } from "./styles/tensor";
+import Filters from "./components/Filters";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <div>
+			<NavBar />
+			<Filters />
+			<CenteredFlex mx={50}>
+			<LaunchData />
+
+			</CenteredFlex>
+		</div>
   );
 }
 
